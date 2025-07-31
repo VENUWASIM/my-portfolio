@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Wasim Khan - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- External CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Spinner CSS */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #4c51bf;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <div class="container mx-auto px-6 py-16 max-w-6xl">
+
+        <!-- Theme Toggle Button -->
+        <button id="themeToggle" class="fixed top-6 right-6 p-3 rounded-full shadow-lg z-50">
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h1M3 12H2m15.325-4.575l.707-.707M5.968 18.032l-.707.707m-1.414-1.414l.707-.707M18.032 5.968l.707-.707M6.343 6.343l-1.414-1.414M17.657 17.657l1.414 1.414M12 7a5 5 0 110 10 5 5 0 010-10z" />
+            </svg>
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+        </button>
+
+        <!-- Message Box for API feedback -->
+        <div id="messageBox" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-6 py-3 rounded-lg shadow-xl hidden z-50">
+            <p id="messageText"></p>
+        </div>
+
+        <!-- Header Section -->
+        <header class="text-center mb-20 py-12 rounded-3xl shadow-2xl">
+            <h1 class="text-7xl font-extrabold mb-4">Mohammed Wasim Khan</h1>
+            <p class="text-3xl font-bold mb-6">Student, Aspiring Full-Stack Developer | Data Analyst</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 text-xl">
+                <a href="tel:+919640011405" class="hover:text-indigo-900 transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    +91 9640011405
+                </a>
+                <a href="mailto:wasim143mr@gmail.com" class="hover:text-indigo-900 transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 link-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-4 6v4a2 2 0 01-2 2H7a2 2 0 01-2-2v-4m0-4h14a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" />
+                    </svg>
+                    wasim143mr@gmail.com
+                </a>
+                <a href="https://www.linkedin.com/in/mohammed-wasim-khan-757595245/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 link-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/VENUWASIM" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 link-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.08-.731.084-.716.084-.716 1.192.085 1.815 1.226 1.815 1.226 1.064 1.803 2.792 1.277 3.472.978.108-.758.417-1.277.76-1.577-2.665-.299-5.46-.333-5.46 5.923 0 1.313.469 2.383 1.236 3.221-.124.3-.508 1.53-.118 2.146.0.0.945.306 3.091-1.117.89-.253 1.84-.38 2.75-.38.91 0 1.86.127 2.75.38 2.146 1.423 3.089 1.117 3.089 1.117.391-.616.009-1.846-.127-2.146.767-.838 1.235-1.908 1.235-3.221 0-6.262-2.796-6.577-5.479-5.923.429-.369.812-1.121.812-2.143v-.923c0-.261.163-.564.793-.577 4.768-1.581 8.205-6.085 8.205-11.387 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    GitHub
+                </a>
+                <a href="https://leetcode.com/u/wasim143mr/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 transition duration-300 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 link-icon" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.496 16.711c-.818 0-1.464.685-1.464 1.534s.646 1.534 1.464 1.534c.819 0 1.464-.685 1.464-1.534s-.645-1.534-1.464-1.534zm-3.056 0c-.818 0-1.464.685-1.464 1.534s.646 1.534 1.464 1.534c.819 0 1.464-.685 1.464-1.534s-.645-1.534-1.464-1.534zm-3.056 0c-.818 0-1.464.685-1.464 1.534s.646 1.534 1.464 1.534c.819 0 1.464-.685 1.464-1.534s-.645-1.534-1.464-1.534zm-3.056 0c-.818 0-1.464.685-1.464 1.534s.646 1.534 1.464 1.534c.819 0 1.464-.685 1.464-1.534s-.645-1.534-1.464-1.534zm12.224-11.603h-1.25l-.946-2.585h-2.126l-.946 2.585h-1.25l-2.062-5.603h2.126l.946 2.585h1.25l.946-2.585h2.126l.946 2.585h1.25l2.062-5.603zm-1.062 0l-2.062 5.603h1.25l.946-2.585h2.126l.946 2.585h1.25l2.062-5.603z"/>
+                    </svg>
+                    LeetCode
+                </a>
+            </div>
+        </header>
+
+        <!-- About Me Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">About Me</h2>
+            <p class="text-xl leading-relaxed">
+                An enthusiastic and dedicated Integrated MTech in Software Engineering student with a strong foundation in full-stack web development, AI/ML, and data analysis. Passionate about building scalable and efficient applications, I am an active coder and quick learner, always eager to explore new technologies and solve complex problems. My experience includes developing robust backend systems with Node.js and Express.js, and implementing intelligent solutions using deep learning and machine learning algorithms.
+            </p>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">Technical Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Languages</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">Python,</span>
+                        <span class="skill-badge">Java,</span>
+                        <span class="skill-badge">JavaScript (ES6+),</span>
+                        <span class="skill-badge">HTML,</span>
+                        <span class="skill-badge">CSS,</span>
+                        <span class="skill-badge">SQL (MySQL)</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Backend Technologies</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">Node.js,</span>
+                        <span class="skill-badge">Express.js,</span>
+                        <span class="skill-badge">Flask,</span>
+                        <span class="skill-badge">RESTful APIs</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Databases</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">MySQL,</span>
+                        <span class="skill-badge">MongoDB,</span>
+                        <span class="skill-badge">DBMS</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Frameworks & Libraries</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">React,</span>
+                        <span class="skill-badge">TensorFlow,</span>
+                        <span class="skill-badge">scikit-learn,</span>
+                        <span class="skill-badge">NumPy,</span>
+                        <span class="skill-badge">Pandas</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">DevOps & Cloud Computing</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">Git,</span>
+                        <span class="skill-badge">GitHub,</span>
+                        <span class="skill-badge">AWS</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-3">Other Concepts</h3>
+                    <div class="flex flex-wrap">
+                        <span class="skill-badge">Linux,</span>
+                        <span class="skill-badge">OS Concepts,</span>
+                        <span class="skill-badge">OOPs,</span>
+                        <span class="skill-badge">Data Structures,</span>
+                        <span class="skill-badge">Algorithms,</span>
+                        <span class="skill-badge">SDLC,</span>
+                        <span class="skill-badge">Computer Networks</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">Work Experience</h2>
+            <div class="mb-8 p-6 rounded-lg shadow-inner">
+                <h3 class="text-2xl font-bold">Full Stack Web Development Intern</h3>
+                <p class="text-xl font-semibold">Smart Hospital Management System</p>
+                <p class="text-md mb-3">June 2024 - July 2024</p>
+                <ul class="list-disc list-inside space-y-3 text-lg">
+                    <li>Developed a full-stack hospital management system using <span class="font-bold">Node.js</span> and <span class="font-bold">Express.js</span> for the backend.</li>
+                    <li>Engineered a <span class="font-bold">RESTful API</span> enabling secure data access for doctors and hospital staff.</li>
+                    <li>Implemented QR code-based authentication for patient registration and health record logging, ensuring data privacy and security.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="project-card">
+                    <h3 class="text-2xl font-bold mb-3">Smart Attendance Using Face Recognition</h3>
+                    <p class="text-md mb-4">May 2024</p>
+                    <p class="original-description mb-5">
+                        Developed a facial recognition-based attendance system using deep learning algorithms to automate attendance. Enhanced efficiency, reliability, and security, offering a smart solution for modern institutions.
+                    </p>
+                    <p class="expanded-description text-gray-600 text-base italic hidden mb-4"></p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="https://github.com/VENUWASIM/face-recognition-attendance-system" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center">
+                            View Project on GitHub
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <button class="btn-primary expand-btn inline-flex items-center">
+                            ✨ Expand Description <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-2xl font-bold mb-3">Text-Based Emotion Classifier</h3>
+                    <p class="text-md mb-4">December 2023 - May 2024</p>
+                    <p class="original-description mb-5">
+                        Built an emotion detection system using Python, scikit-learn, NumPy, and Pandas, achieving 85% accuracy with KNN, SVM, and Logistic Regression models. Implemented preprocessing techniques like tokenization, stopword removal, and TF-IDF vectorization to optimize performance.
+                    </p>
+                    <p class="expanded-description text-gray-600 text-base italic hidden mb-4"></p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="https://github.com/VENUWASIM/Text-Based-Emotion-Classifier-Using-Machine-Learning" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center">
+                            View Project on GitHub
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <button class="btn-primary expand-btn inline-flex items-center">
+                            ✨ Expand Description <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-2xl font-bold mb-3">Spam-Email-Detection-Using-machine-learning</h3>
+                    <p class="text-md mb-4">Public</p>
+                    <p class="original-description mb-5">
+                        This project aims to classify emails as spam or ham (not spam) using machine learning techniques. We use Natural Language Processing (NLP) and Supervised Learning to build an efficient classifier.
+                    </p>
+                    <p class="expanded-description text-gray-600 text-base italic hidden mb-4"></p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="https://github.com/VENUWASIM/Spam-Email-Detection-Using-machine-learning" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center">
+                            View Project on GitHub
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <button class="btn-primary expand-btn inline-flex items-center">
+                            ✨ Expand Description <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3 class="text-2xl font-bold mb-3">Iris-Classification-using-Gaussian-Naïve-Bayes</h3>
+                    <p class="text-md mb-4">Public</p>
+                    <p class="original-description mb-5">
+                        This project implements a Gaussian Naïve Bayes classifier on the Iris dataset using scikit-learn. It achieves high accuracy in classifying iris species based on petal and sepal measurements. Evaluates model performance with: Accuracy Score, Confusion Matrix (with heatmap), Classification Report, 5-Fold Cross-Validation. Test Accuracy: ~95%.
+                    </p>
+                    <p class="expanded-description text-gray-600 text-base italic hidden mb-4"></p>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <a href="https://github.com/VENUWASIM/Iris-Classification-using-Gaussian-Na-ve-Bayes" target="_blank" rel="noopener noreferrer" class="btn-primary inline-flex items-center">
+                            View Project on GitHub
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                        </a>
+                        <button class="btn-primary expand-btn inline-flex items-center">
+                            ✨ Expand Description <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">Education</h2>
+            <div class="mb-8 p-6 rounded-lg shadow-inner">
+                <h3 class="text-2xl font-bold">Integrated MTech in Software Engineering</h3>
+                <p class="text-xl font-semibold">VIT-AP University</p>
+                <p class="text-md mb-3">Current CGPA: 8.11 | Amaravathi, Andhra Pradesh | Nov. 2021 - Present</p>
+            </div>
+            <div class="p-6 rounded-lg shadow-inner">
+                <h3 class="text-2xl font-bold">Intermediate, MPC</h3>
+                <p class="text-xl font-semibold">Narayana Junior College</p>
+                <p class="text-md mb-3">Grade: 8.88 | Vizag, Andhra Pradesh | Aug 2018 - May 2020</p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">Certifications</h2>
+            <ul class="list-disc list-inside space-y-3 text-lg">
+                <li>Object Oriented Programming- Basics to Advance (Udemy) - November 2023</li>
+                <li>Internship Certificate from Rashtriya Ispat Nigam Limited (Vizag Steel Plant) - July 2024</li>
+            </ul>
+        </section>
+
+        <!-- Interests Section -->
+        <section class="mb-16 p-10 card">
+            <h2 class="section-heading mb-8">Interests</h2>
+            <ul class="list-disc list-inside space-y-3 text-lg">
+                <li>Active coder and quick learner</li>
+                <li>Organized events in college fest and University Chess Player</li>
+            </ul>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-10 text-sm">
+            <p>&copy; 2024 Mohammed Wasim Khan. All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const messageBox = document.getElementById('messageBox');
+        const messageText = document.getElementById('messageText');
+
+        // Function to set the theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Show message box
+        function showMessage(message, type = 'info') {
+            messageText.textContent = message;
+            messageBox.className = `fixed bottom-6 left-1/2 -translate-x-1/2 px-6 py-3 rounded-lg shadow-xl z-50`;
+            if (type === 'info') {
+                messageBox.classList.add('bg-blue-500', 'text-white');
+            } else if (type === 'error') {
+                messageBox.classList.add('bg-red-500', 'text-white');
+            }
+            messageBox.classList.remove('hidden');
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 3000); // Hide after 3 seconds
+        }
+
+        // Check for saved theme preference on load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // If no preference, check system preference
+            setTheme('dark');
+        } else {
+            setTheme('light'); // Default to light mode
+        }
+
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        });
+
+        // Gemini API integration for project description expansion
+        const expandButtons = document.querySelectorAll('.expand-btn');
+
+        expandButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const projectCard = button.closest('.project-card');
+                const originalDescriptionElement = projectCard.querySelector('.original-description');
+                const expandedDescriptionElement = projectCard.querySelector('.expanded-description');
+                const spinner = button.querySelector('.spinner');
+
+                const projectName = projectCard.querySelector('h3').textContent;
+                const originalDescription = originalDescriptionElement.textContent.trim();
+
+                // Hide original and show expanded placeholder
+                originalDescriptionElement.classList.add('hidden');
+                expandedDescriptionElement.classList.remove('hidden');
+                expandedDescriptionElement.textContent = 'Generating expanded description...'; // Initial message
+
+                button.disabled = true; // Disable button during generation
+                spinner.classList.remove('hidden'); // Show spinner
+
+                const prompt = `Expand the following project description into a more detailed paragraph (around 100-150 words), highlighting its key features, technologies used, and impact. Focus on technical details and quantifiable achievements if possible.
+Project: ${projectName}
+Description: ${originalDescription}`;
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide this in runtime
+
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                let retryCount = 0;
+                const maxRetries = 5;
+                let delay = 1000; // 1 second
+
+                while (retryCount < maxRetries) {
+                    try {
+                        const response = await fetch(apiUrl, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!response.ok) {
+                            if (response.status === 429) { // Too many requests
+                                showMessage('Rate limit exceeded. Retrying...', 'info');
+                                await new Promise(resolve => setTimeout(resolve, delay));
+                                delay *= 2; // Exponential backoff
+                                retryCount++;
+                                continue;
+                            } else {
+                                throw new Error(`API error: ${response.status} ${response.statusText}`);
+                            }
+                        }
+
+                        const result = await response.json();
+
+                        if (result.candidates && result.candidates.length > 0 &&
+                            result.candidates[0].content && result.candidates[0].content.parts &&
+                            result.candidates[0].content.parts.length > 0) {
+                            const text = result.candidates[0].content.parts[0].text;
+                            expandedDescriptionElement.textContent = text;
+                            showMessage('Description expanded successfully!', 'info');
+                        } else {
+                            expandedDescriptionElement.textContent = 'Could not generate expanded description.';
+                            showMessage('Failed to get a valid response from AI.', 'error');
+                        }
+                        break; // Exit loop on success
+                    } catch (error) {
+                        console.error('Error calling Gemini API:', error);
+                        expandedDescriptionElement.textContent = 'Error generating description. Please try again.';
+                        showMessage(`Error: ${error.message}`, 'error');
+                        break; // Exit loop on unrecoverable error
+                    } finally {
+                        button.disabled = false; // Re-enable button
+                        spinner.classList.add('hidden'); // Hide spinner
+                    }
+                }
+                if (retryCount === maxRetries) {
+                    showMessage('Failed to generate description after multiple retries.', 'error');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,271 @@
+/* CSS Variables for Light Mode */
+:root {
+    --bg-primary: linear-gradient(135deg, #e0f2fe, #c7e5ff, #e0f2fe);
+    --bg-card: #ffffff;
+    --bg-header: #ffffff;
+    --bg-project-card: #f0f9ff;
+    --bg-timeline-content: #f8fafc;
+    --bg-certificate-card: #f9fafb;
+    --text-color: #1f2937;
+    --heading-color: #1a202c;
+    --accent-color: #4c51bf;
+    --accent-color-dark: #3e388d;
+    --link-color: #4c51bf;
+    --link-hover-color: #3e388d;
+    --skill-badge-bg: #bfdbfe;
+    --skill-badge-text: #1e40af;
+    --skill-badge-hover-bg: #93c5fd;
+    --border-color: #e2e8f0;
+    --project-border-color: #a7d9f8;
+    --timeline-line-color: #cbd5e0;
+    --shadow-light: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 15px 15px -7px rgba(0, 0, 0, 0.08);
+    --button-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.15);
+    --toggle-button-bg: #ffffff;
+    --toggle-button-text: #334155;
+    --toggle-button-hover-bg: #f1f5f9;
+}
+
+/* CSS Variables for Dark Mode */
+html.dark {
+    --bg-primary: linear-gradient(135deg, #0f172a, #1e293b, #0f172a); /* More distinct dark gradient */
+    --bg-card: #1e293b;
+    --bg-header: #1e293b;
+    --bg-project-card: #0f172a;
+    --bg-timeline-content: #222b3a;
+    --bg-certificate-card: #222b3a;
+    --text-color: #e2e8f0; /* Lighter text for dark mode */
+    --heading-color: #f8fafc; /* Lighter headings for dark mode */
+    --accent-color: #6366f1; /* Slightly brighter indigo accent */
+    --accent-color-dark: #818cf8; /* Even brighter indigo on hover */
+    --link-color: #93c5fd; /* Light blue links */
+    --link-hover-color: #60a5fa; /* Darker light blue on hover */
+    --skill-badge-bg: #334155;
+    --skill-badge-text: #f1f5f9;
+    --skill-badge-hover-bg: #475569;
+    --border-color: #4a5568;
+    --project-border-color: #4a5568;
+    --timeline-line-color: #4a5568;
+    --shadow-light: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+    --shadow-hover: 0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 15px 15px -7px rgba(0, 0, 0, 0.15);
+    --button-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.25);
+    --toggle-button-bg: #334155;
+    --toggle-button-text: #f1f5f9;
+    --toggle-button-hover-bg: #475569;
+}
+
+/* Apply transitions to all elements that use CSS variables for smooth theme change */
+/* Universal transition for all properties that change with theme */
+* {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color); /* Use CSS variable for body text color */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-primary); /* Use CSS variable for body background */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.section-heading {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: var(--heading-color); /* Use CSS variable */
+    font-size: 2.25rem;
+}
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 80px;
+    height: 5px;
+    background-color: var(--accent-color); /* Use CSS variable */
+    border-radius: 9999px;
+}
+.card {
+    background-color: var(--bg-card); /* Use CSS variable */
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.5s ease, border-color 0.5s ease;
+    border: 1px solid var(--border-color); /* Use CSS variable */
+}
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Header specific styling to ensure background and text colors change */
+header {
+    background-color: var(--bg-header); /* Use CSS variable */
+    color: var(--text-color); /* Ensure header text color also changes */
+}
+header h1 {
+    color: var(--heading-color); /* Use CSS variable */
+}
+header p {
+    color: var(--accent-color); /* Use CSS variable for tagline */
+}
+header a {
+    color: var(--link-color); /* Use CSS variable for links */
+}
+header a:hover {
+    color: var(--link-hover-color); /* Use CSS variable for link hover */
+}
+
+
+.skill-badge {
+    display: inline-block;
+    background-color: var(--skill-badge-bg); /* Use CSS variable */
+    color: var(--skill-badge-text); /* Use CSS variable */
+    padding: 0.4rem 1.2rem;
+    border-radius: 9999px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin: 0.4rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.skill-badge:hover {
+    background-color: var(--skill-badge-hover-bg); /* Use CSS variable */
+}
+.btn-primary {
+    background-color: var(--accent-color); /* Use CSS variable */
+    color: #ffffff; /* Keep button text white for contrast */
+    padding: 0.9rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: var(--button-shadow);
+}
+.btn-primary:hover {
+    background-color: var(--accent-color-dark); /* Use CSS variable */
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+.project-card {
+    background-color: var(--bg-project-card); /* Use CSS variable */
+    border: 1px solid var(--project-border-color); /* Use CSS variable */
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.5s ease, border-color 0.5s ease;
+}
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 16px -4px rgba(0, 0, 0, 0.15);
+}
+.link-icon {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    color: inherit; /* Ensures icon color changes with parent text color */
+}
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 2.5rem;
+}
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 12px;
+    height: 12px;
+    background-color: var(--accent-color); /* Use CSS variable */
+    border-radius: 50%;
+    z-index: 10;
+    border: 2px solid var(--bg-timeline-content); /* Border color adapts to content background */
+}
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1rem;
+    bottom: -2.5rem;
+    width: 2px;
+    background-color: var(--timeline-line-color); /* Use CSS variable */
+}
+.timeline-item:last-child::after {
+    display: none;
+}
+.timeline-content {
+    background-color: var(--bg-timeline-content); /* Use CSS variable */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color); /* Use CSS variable */
+    transition: background-color 0.5s ease, border-color 0.5s ease;
+}
+.certificate-card {
+    background-color: var(--bg-certificate-card); /* Use CSS variable */
+    border: 1px solid var(--border-color); /* Use CSS variable */
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, background-color 0.5s ease, border-color 0.5s ease;
+}
+.certificate-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 10px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the theme toggle button */
+#themeToggle {
+    background-color: var(--toggle-button-bg);
+    color: var(--toggle-button-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#themeToggle:hover {
+    background-color: var(--toggle-button-hover-bg);
+}
+
+/* Ensure all text elements within the main content adapt their color */
+/* These were already in place but re-emphasizing their importance */
+h1, h2, h3, p, li {
+    color: var(--text-color);
+}
+
+/* Specific overrides for text that should be a different color than default text-color */
+.section-heading,
+.card h3, .project-card h3, .timeline-content h3, .certificate-card h3 {
+    color: var(--heading-color);
+}
+header h1 {
+    color: var(--heading-color);
+}
+header p {
+    color: var(--accent-color); /* Tagline in header */
+}
+
+/* Ensure links inside cards also adopt the link color */
+.card a:not(.btn-primary) {
+    color: var(--link-color);
+}
+.card a:not(.btn-primary):hover {
+    color: var(--link-hover-color);
+}
+
+/* Ensure the text inside the original-description and expanded-description also changes color */
+.original-description, .expanded-description {
+    color: var(--text-color);
+}
+
+/* Ensure the shadow-inner background changes */
+.shadow-inner {
+    background-color: var(--bg-timeline-content); /* Reusing timeline content background for inner shadow cards */
+    transition: background-color 0.5s ease;
+}
